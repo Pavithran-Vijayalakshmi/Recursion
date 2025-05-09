@@ -5,7 +5,7 @@ def subs(ind,given,arr,k):
         return
     if (given[ind] <= k):
         arr.append(given[ind])
-        subs(ind,given,arr,k-given[ind])
+        subs(ind+1,given,arr,k-given[ind])
         arr.pop()
     subs(ind+1,given,arr,k)
 
