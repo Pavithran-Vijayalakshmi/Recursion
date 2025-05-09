@@ -4,6 +4,9 @@ def subs(ind,given,arr):
             print(i,end = " ")
         print()
         return
+    if len(arr) == 0:
+        print("{}")
+        return
     arr.append(given[ind])
     subs(ind+1,given,arr)
     arr.pop()
