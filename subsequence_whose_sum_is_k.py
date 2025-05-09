@@ -1,14 +1,18 @@
 def subs(i,arr,ds,k):
-    if i>=len(arr):
+    if i==len(arr):
         if sum(ds) == k:
             print(ds)
-        return
+            return True
+        return False
 
     ds.append(arr[i])
-    subs(i+1,arr,ds,k)
+    if subs(i+1,arr,ds,k) == True:
+        return True
     ds.pop()
-    subs(i+1,arr,ds,k)
+    if subs(i+1,arr,ds,k) == True:
+        return True
+    return False
     
-arr= [ 1,2,1,3,4,2,3]
+arr= [ 1,2,1,3,4,1,2,5]
 k = 5
 subs(0,arr,[],k)
